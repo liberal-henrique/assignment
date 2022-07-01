@@ -1,15 +1,21 @@
 import { createStore as reduxCreateStore } from "redux"
 
-const reducer = (state, action) => {
-  if (action.type === `INCREMENT`) {
-    return Object.assign({}, state, {
-      count: state.count + 1,
-    })
+const initialState = { counter: 0 }
+
+const counterReducer = (state, action) => {
+  
+  switch(action.type) {
+    case 'INCREMENT':
+      return { ...state, counter: state.counter + 1 }
+    case 'DECREMENT':
+      return { ...state, counter: state.counter - 1 }
+    case 'RESET':
+      return { ...state, counter: 0 }
+    default:
+      return state
   }
-  return state
 }
 
-const initialState = { count: 0 }
+const createStore = () => reduxCreateStore (counterReducer, initialState)
 
-const createStore = () => reduxCreateStore(reducer, initialState)
 export default createStore

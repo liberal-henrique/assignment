@@ -12,12 +12,14 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint": "eslint src"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.8.2",
+    "@reduxjs/toolkit": "^1.8.2",
     "gatsby": "^4.15.2",
     "gatsby-plugin-image": "^2.15.1",
     "gatsby-plugin-manifest": "^4.15.1",
@@ -31,5 +33,9 @@
     "react-helmet": "^6.1.0",
     "react-redux": "^8.0.2",
     "redux": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.30.1"
   }
 }
